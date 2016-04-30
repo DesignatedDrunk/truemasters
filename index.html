@@ -1,0 +1,489 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>True Masters</title>
+        <link href='https://fonts.googleapis.com/css?family=Rubik+One' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+
+        <link href="css/style.css" rel="stylesheet">
+
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script src="js/template7.min.js"></script>
+        <script src="js/export/data_champions.js"></script>
+        <script src="js/export/data_regions.js"></script>
+    </head>
+    <body style="overflow:hidden;">
+        <form style="overflow:visible;">
+            <div style="position:relative;left:0px;top:0px;width:100%;height:100%;overflow:visible;">
+                <img src="images/taric-cutout.png" style="position:absolute;right:20px;top:-10px;width:25%;height:auto;cursor:pointer;" onclick="openPage('divIntro');" />
+
+                <img src="images/title-divider.png" style="position:absolute;left:5%;top:80px;width:20%;height:auto;cursor:pointer;" onclick="openPage('divIntro');" / >
+                <div style="position:absolute;left:0px;top:14px;width:30%;font-family: 'Rubik One', sans-serif;text-align:center;line-height:1.1em;font-size:30px;cursor:pointer;" onclick="openPage('divIntro');">TRUE</div>
+                <div style="position:absolute;left:0px;top:40px;width:30%;font-family: 'Rubik One', sans-serif;text-align:center;line-height:1.1em;font-size:40px;cursor:pointer;" onclick="openPage('divIntro');">MASTERS</div>
+
+                <div style="position:absolute;left:48px;right:48px;top:168px;bottom:88px;background-color: rgba(0,0,0,0.9);">&nbsp;</div>
+                    
+                <div id="divMain" class="bg-repeater" style="position:absolute;left:28px;right:28px;top:168px;bottom:88px;padding:48px 68px;overflow:auto;">
+                    <div id="divIntro" style="font-family: 'Raleway', sans-serif;margin-bottom:90px;">
+                        <div style="font-weight:700;font-size:20px;margin-bottom:6px;">Welcome to True Masters,</div>
+                        On this website you will find various statistics on <b>Champion Mastery Data</b><br/>
+                        collected from the Master- and Challenger-Tier players accross all regions.
+                        <br/><br/>
+                        Select the data you want to see from the options below!
+                        <br/><br/>
+
+                        <table style="width:100%;margin-top:36px;">
+                            <tr>
+                                <td style="width:33.33%;cursor:pointer;vertical-align:middle;text-align:center;" onclick="openPage('divTab1');">
+                                    <div style="display:inline-block;border:2px solid #DADADA;border-radius:8px;width:150px;height:150px;background-size:cover;background-image:url('images/icon-1.png');">&nbsp;</div>
+                                    <div style="font-weight:700;font-size:20px;margin-top:16px;">Most Mastered<br/>Champions</div>
+                                </td>
+                                <td style="width:33.33%;cursor:pointer;vertical-align:middle;text-align:center;" onclick="openPage('divTab2');">
+                                    <div style="display:inline-block;border:2px solid #DADADA;border-radius:8px;width:150px;height:150px;background-size:cover;background-image:url('images/icon-2.png');">&nbsp;</div>
+                                    <div style="font-weight:700;font-size:20px;margin-top:16px;">Connected<br />Champions</div>
+                                </td>
+                                <td style="width:33.33%;cursor:pointer;vertical-align:middle;text-align:center;" onclick="openPage('divTab3');">
+                                    <div style="display:inline-block;border:2px solid #DADADA;border-radius:8px;width:150px;height:150px;background-size:cover;background-image:url('images/icon-3.png');">&nbsp;</div>
+                                    <div style="font-weight:700;font-size:20px;margin-top:16px;">Regional<br />Champions</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="divTab1" class="hidden" style="font-family: 'Raleway', sans-serif;margin-bottom:90px;">
+                        <div style="font-weight:700;font-size:20px;margin-bottom:6px;">Most Mastered Champions!</div>
+                        View the most mastered <b>Champions</b> for each region.<br />
+                        or view the averages of all regions.
+                        <br /><br />
+                        <div style="font-weight:700;font-size:20px;display:inline-block;margin-right:8px;">Region</div>
+                        <select id="ddlRegion1" onchange="openPage('divTab1');">
+                            <option value="global">All Regions</option>
+                            <option value="br">BR</option>
+                            <option value="eune">EUNE</option>
+                            <option value="euw">EUW</option>
+                            <option value="jp">JP</option>
+                            <option value="kr">KR</option>
+                            <option value="lan">LAN</option>
+                            <option value="las">LAS</option>
+                            <option value="na">NA</option>
+                            <option value="oce">OCE</option>
+                            <option value="ru">RU</option>
+                            <option value="tr">TR</option>
+                        </select>
+                        <br/><br/>
+                        <div style="font-weight:700;font-size:20px;display:inline-block;margin-right:8px;">Primary Role</div>
+                        <select id="ddlRole1" class="fillroles" onchange="openPage('divTab1');"></select>
+                        <br/><br/>
+                        <div class="content">...</div>
+
+                        <div style="position:absolute;top:46px;right:66px;z-index: 999;" class="btn" onclick="openPage('divIntro');">Home</div>
+                    </div>
+                    <div id="divTab2" class="hidden" style="font-family: 'Raleway', sans-serif;margin-bottom:90px;">
+                        <div style="font-weight:700;font-size:20px;margin-bottom:6px;">Connected Champions!</div>
+                        Mastering just <b>One Champion</b> is not enough, but who do i master next?<br />
+                        select the champion you master and find out what other champions these players mastered aswell.
+                        <br /><br />
+                        <div style="font-weight:700;font-size:20px;display:inline-block;margin-right:8px;">Champion</div>
+                        <select id="ddlChampion1" class="fillchampions" onchange="openPage('divTab2');"></select>
+                        <br/><br/>
+                        <div class="content">...</div>
+
+                        <div style="position:absolute;top:46px;right:66px;z-index: 999;" class="btn" onclick="openPage('divIntro');">Home</div>
+                    </div>
+                    <div id="divTab3" class="hidden" style="font-family: 'Raleway', sans-serif;margin-bottom:90px;">
+                        <div style="font-weight:700;font-size:20px;margin-bottom:6px;">Regional Champions!</div>
+                        All regions are different <b>One Champion</b> might end up first in one region while last in the other?<br />
+                        select the champion you want to see and see where they are placed in each region!
+                        <br /><br />
+                        <div style="font-weight:700;font-size:20px;display:inline-block;margin-right:8px;">Champion</div>
+                        <select id="ddlChampion2" class="fillchampions" onchange="openPage('divTab3');"></select>
+                        <br/><br/>
+                        <div class="content">...</div>
+
+                        <div style="position:absolute;top:46px;right:66px;z-index: 999;" class="btn" onclick="openPage('divIntro');">Home</div>
+                    </div>
+                </div>
+                <div style="position:absolute;left:28px;padding-left:20%;right:28px;padding-right:20%;bottom:8px;text-align:center;">
+                    &copy; League of Legends, characters, images and all other copyrighted content related to League of Legends
+                    are the property of Riot Games, Inc. All rights reserved.
+                </div>
+
+                <img src="images/splash-divider.png" style="position:absolute;left:0px;top:100px;width:100%;height:auto;" />
+                <img src="images/splash-divider.png" style="position:absolute;left:0px;bottom:20px;width:100%;height:auto;" />
+            </div>
+
+            <!-- Templates -->
+            <div style="display:none !important;">
+                <script id="templateTab1" type="text/template7">
+                    <table>
+                        <tbody>
+                            <tr class="trHead">
+                                <td>#</td>
+                                <td>&nbsp;</td>
+                                <td>Champion</td>
+                                <td>Total Players</td>
+                                <td>Total Points</td>
+                            </tr>
+                            {{#each champions}}
+                            <tr class="trContent">
+                                <td style="padding:0px;font-weight:bold;text-align:center;vertical-align:middle;">{{index}}.</td>
+                                <td style="padding:0px;font-weight:bold;text-align:center;vertical-align:middle;background-size:cover;background-position:center center;background-image:url('http://ddragon.leagueoflegends.com/cdn/6.9.1/img/champion/{{champion.image.full}}');">
+                                    &nbsp;
+                                </td>
+                                <td style="line-height:1.3em;">
+                                    {{champion.name}}<br /><i>{{champion.title}}</i>
+                                </td>
+                                <td style="font-weight:bold;text-align:center;vertical-align:middle;">{{val}}</td>
+                                <td style="font-weight:bold;text-align:center;vertical-align:middle;">{{js "addCommas(this.val2)"}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </script>
+                <script id="templateTab2" type="text/template7">
+                    <table style="width:100%;">
+                        <tr>
+                            <td rowspan="2">
+                                <img src="http://ddragon.leagueoflegends.com/cdn/6.9.1/img/champion/{{champion.image.full}}" style="border:2px solid #DADADA;border-radius:8px;width:124px;" />
+                            </td>
+                            <td style="width:100%;padding:16px;">
+                                <div style="font-weight:700;font-size:26px;">{{champion.name}}</div>
+                                <div style="">{{champion.title}}</div>
+                                <div><i>{{join champion.tags delimiter=", "}}</i></div>
+                            </td>
+                            <td style="text-align:right;">
+                                <div class="btn" style="cursor:default;width:auto;font-weight:700;margin-bottom:6px;display:inline-block;">Mastered by {{js "(this.amount_lvl1 + this.amount_lvl2 + this.amount_lvl3)"}} players</div><br />
+                                <div class="btn" style="cursor:default;width:auto;font-weight:700;margin-bottom:6px;display:inline-block;">{{js "addCommas(this.amount_points)"}} MasteryPoints</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding:16px;">
+                                <table>
+                                    <tbody>
+                                        <tr class="trHead">
+                                            <td>#</td>
+                                            <td>&nbsp;</td>
+                                            <td>Champion</td>
+                                            <td>Total Players</td>
+                                        </tr>
+                                        {{#each champions}}
+                                        <tr class="trContent">
+                                            <td style="padding:0px;font-weight:bold;text-align:center;vertical-align:middle;">{{index}}.</td>
+                                            <td onclick="$('#ddlChampion1').val({{id}}).change();" style="cursor:pointer;padding:0px;font-weight:bold;text-align:center;vertical-align:middle;background-size:cover;background-position:center center;background-image:url('http://ddragon.leagueoflegends.com/cdn/6.9.1/img/champion/{{champion.image.full}}');">
+                                                &nbsp;
+                                            </td>
+                                            <td onclick="$('#ddlChampion1').val({{id}}).change();" style="line-height:1.3em;cursor:pointer;">
+                                                {{champion.name}}<br /><i>{{champion.title}}</i>
+                                            </td>
+                                            <td style="font-weight:bold;text-align:center;vertical-align:middle;">{{val}}</td>
+                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </script>
+                <script id="templateTab3" type="text/template7">
+                    <table style="width:100%;">
+                        <tr>
+                            <td rowspan="2">
+                                <img src="http://ddragon.leagueoflegends.com/cdn/6.9.1/img/champion/{{champion.image.full}}" style="border:2px solid #DADADA;border-radius:8px;width:124px;" />
+                            </td>
+                            <td style="width:100%;padding:16px;">
+                                <div style="font-weight:700;font-size:26px;">{{champion.name}}</div>
+                                <div style="">{{champion.title}}</div>
+                                <div><i>{{join champion.tags delimiter=", "}}</i></div>
+                            </td>
+                            <td style="text-align:right;">
+                                <div class="btn" style="cursor:default;width:auto;font-weight:700;margin-bottom:6px;display:inline-block;">Mastered by {{js "(this.amount_lvl1 + this.amount_lvl2 + this.amount_lvl3)"}} players</div><br />
+                                <div class="btn" style="cursor:default;width:auto;font-weight:700;margin-bottom:6px;display:inline-block;">{{js "addCommas(this.amount_points)"}} MasteryPoints</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding:16px;">
+                                <table>
+                                    <tbody>
+                                        <tr class="trHead">
+                                            <td>#</td>
+                                            <td>Region</td>
+                                            <td>Regional Ranking</td>
+                                            <td>Total Players</td>
+                                            <td>Total Points</td>
+                                        </tr>
+                                        {{#each regions}}
+                                        <tr class="trContent">
+                                            <td style="padding:0px;font-weight:bold;text-align:center;vertical-align:middle;">{{index}}.</td>
+                                            <td style="line-height:1.3em;cursor:pointer;vertical-align:middle;">
+                                                {{name}}
+                                            </td>
+                                            <td style="font-weight:bold;text-align:center;vertical-align:middle;">#{{val3}}</td>
+                                            <td style="font-weight:bold;text-align:center;vertical-align:middle;">{{val}}</td>
+                                            <td style="font-weight:bold;text-align:center;vertical-align:middle;">{{val2}}</td>
+                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </script>
+                <script id="templateEmptyTab2" type="text/template7">
+                    <table style="width:100%;margin-top:32px;">
+                        <tr>
+                            <td style="vertical-align:middle;text-align:center;">
+                                <img src="images/sticker-amumu.png" style="height:150px;" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align:middle;text-align:center;">
+                                <div style="font-weight:700;font-size:20px;">Ow no!</div>
+                                <div>You have not selected a champion yet.</div>
+                            </td>
+                        </tr>
+                    </table>
+                </script>
+                <script id="templateEmptyTab3" type="text/template7">
+                    <table style="width:100%;margin-top:32px;">
+                        <tr>
+                            <td style="vertical-align:middle;text-align:center;">
+                                <img src="images/sticker-amumu.png" style="height:150px;" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align:middle;text-align:center;">
+                                <div style="font-weight:700;font-size:20px;">Ow no!</div>
+                                <div>You have not selected a champion yet.</div>
+                            </td>
+                        </tr>
+                    </table>
+                </script>
+            </div>
+        </form>
+        
+        <script type="text/javascript">      
+            var compiledTemplates = {};
+
+            function addCommas(n) {
+                var rx = /(\d+)(\d{3})/;
+                return String(n).replace(/^\d+/, function (w) {
+                    while (rx.test(w)) {
+                        w = w.replace(rx, '$1.$2');
+                    }
+                    return w;
+                });
+            }
+
+            $(window).load(function () {
+                /* Fill Champion dropdowns */
+                $("select.fillchampions").each(function () {
+                    var _html = "";
+                    _html += "<option value=''>Select a Champion</option>";
+
+                    var lst = [];
+                    for (var id in data_champions) {
+                        if (data_champions.hasOwnProperty(id)) {
+                            lst.push({
+                                id: id,
+                                name: data_champions[id].name
+                            });
+                        }
+                    }
+                    lst.sort(function (a, b) {
+                        if (a["name"] > b["name"])
+                            return 1;
+                        if (a["name"] < b["name"])
+                            return -1;
+                        return 0;
+                    });
+
+                    for (var i = 0; i < lst.length; i++) { _html += "<option value='" + lst[i].id + "'>" + lst[i].name + "</option>" }
+
+                    $(this).html(_html);
+                });
+
+                /* Fill Role dropdowns */
+                $("select.fillroles").each(function () {
+                    var _html = "";
+                    _html += "<option value=''>All Roles</option>";
+
+                    var lst = [];
+                    for (var id in data_champions) {
+                        if (data_champions.hasOwnProperty(id)) {
+                            var _role = data_champions[id].tags[0];
+                            if (!(lst.indexOf(_role) >= 0)) lst.push(_role);
+                        }
+                    }
+                    lst.sort();
+
+                    for (var i = 0; i < lst.length; i++) { _html += "<option value='" + lst[i] + "'>" + lst[i] + "</option>" }
+
+                    $(this).html(_html);
+                });
+
+                /* Load Templates */
+			    compiledTemplates["divTab1"] = Template7.compile($("#templateTab1").html());
+			    compiledTemplates["divTab2"] = Template7.compile($("#templateTab2").html());
+			    compiledTemplates["divTab3"] = Template7.compile($("#templateTab3").html());
+			    compiledTemplates["divEmptyTab2"] = Template7.compile($("#templateEmptyTab2").html());
+			    compiledTemplates["divEmptyTab3"] = Template7.compile($("#templateEmptyTab3").html());
+			});
+            $(document).ready(function () {
+                
+            });
+            function openPage(name) {
+                var templateName = "";
+                var templateData = {};
+
+                if (name == "divTab1") {
+                    templateName = "divTab1";
+                    templateData["region"] = $("#ddlRegion1").val();
+                    templateData["role"] = $("#ddlRole1").val();
+
+                    //All Tiers
+                    templateData["champions"] = [];
+                    for (var id in data_regions[templateData["region"]]["global"]) {
+                        if (data_regions[templateData["region"]]["global"].hasOwnProperty(id)) {
+                            var val = data_regions[templateData["region"]]["global"][id]["amount_lvl1"] + data_regions[templateData["region"]]["global"][id]["amount_lvl2"] + data_regions[templateData["region"]]["global"][id]["amount_lvl3"];
+                            var val2 = data_regions[templateData["region"]]["global"][id]["amount_points"];
+                            var isvalid = true;
+
+                            if (templateData["role"] != "") {
+                                if (templateData["role"] != data_champions[id]["tags"][0]) isvalid = false;
+                            }
+
+                            if (isvalid) {
+                                templateData["champions"].push({
+                                    id: id,
+                                    val: val,
+                                    val2: val2,
+                                    champion: data_champions[id]
+                                });
+                            }
+                        }
+                    }
+                    templateData["champions"].sort(function (a, b) {
+                        if (a["val"] > b["val"])
+                            return -1;
+                        if (a["val"] < b["val"])
+                            return 1;
+                        return 0;
+                    });
+                    for (var i = 0; i < templateData["champions"].length; i++) { templateData["champions"][i]["index"] = (i + 1); }
+                }
+                else if (name == "divTab2") {
+                    templateName = "divTab2";
+                    templateData["championId"] = $("#ddlChampion1").val();
+                    if (templateData["championId"] == "") {
+                        templateName = "divEmptyTab2";
+                    }
+                    else {
+                        templateData["amount_lvl"] = data_regions["global"]["global"][templateData["championId"]]["amount_lvl"];
+                        templateData["amount_lvl1"] = data_regions["global"]["global"][templateData["championId"]]["amount_lvl1"];
+                        templateData["amount_lvl2"] = data_regions["global"]["global"][templateData["championId"]]["amount_lvl2"];
+                        templateData["amount_lvl3"] = data_regions["global"]["global"][templateData["championId"]]["amount_lvl3"];
+                        templateData["amount_points"] = data_regions["global"]["global"][templateData["championId"]]["amount_points"];
+                        
+                        //All Regions and Tiers
+                        templateData["champions"] = [];
+                        for (var id in data_regions["global"]["global"][templateData["championId"]]["champions"]) {
+                            if (data_regions["global"]["global"][templateData["championId"]]["champions"].hasOwnProperty(id)) {
+                                var val = data_regions["global"]["global"][templateData["championId"]]["champions"][id];
+                                if (id != templateData["championId"] && val > 0) {
+                                    templateData["champions"].push({
+                                        id: id,
+                                        val: val,
+                                        champion: data_champions[id]
+                                    });
+                                }
+                            }
+                        }
+                        templateData["champions"].sort(function (a, b) {
+                            if (a["val"] > b["val"])
+                                return -1;
+                            if (a["val"] < b["val"])
+                                return 1;
+                            return 0;
+                        });
+                        for (var i = 0; i < templateData["champions"].length; i++) { templateData["champions"][i]["index"] = (i + 1); }
+                    }
+
+                }
+                else if (name == "divTab3") {
+                    templateName = "divTab3";
+                    templateData["championId"] = $("#ddlChampion2").val();
+                    if (templateData["championId"] == "") {
+                        templateName = "divEmptyTab3";
+                    }
+                    else {
+                        templateData["amount_lvl"] = data_regions["global"]["global"][templateData["championId"]]["amount_lvl"];
+                        templateData["amount_lvl1"] = data_regions["global"]["global"][templateData["championId"]]["amount_lvl1"];
+                        templateData["amount_lvl2"] = data_regions["global"]["global"][templateData["championId"]]["amount_lvl2"];
+                        templateData["amount_lvl3"] = data_regions["global"]["global"][templateData["championId"]]["amount_lvl3"];
+                        templateData["amount_points"] = data_regions["global"]["global"][templateData["championId"]]["amount_points"];
+
+                        //All Tiers
+                        templateData["regions"] = [];
+                        for (var id in data_regions) {
+                            if (data_regions.hasOwnProperty(id) && id != "global") {
+                                //Generate Regional Top
+                                var regional = [];
+                                for (var rid in data_regions[id]["global"]) {
+                                    if (data_regions[id]["global"].hasOwnProperty(rid)) {
+                                        var val = data_regions[id]["global"][rid]["amount_lvl1"] + data_regions[id]["global"][rid]["amount_lvl2"] + data_regions[id]["global"][rid]["amount_lvl3"];
+                                        regional.push({
+                                            id: rid,
+                                            val: val
+                                        });
+                                    }
+                                }
+                                regional.sort(function (a, b) {
+                                    if (a["val"] > b["val"])
+                                        return -1;
+                                    if (a["val"] < b["val"])
+                                        return 1;
+                                    return 0;
+                                });
+
+                                var val = data_regions[id]["global"][templateData["championId"]]["amount_lvl1"] + data_regions[id]["global"][templateData["championId"]]["amount_lvl2"] + data_regions[id]["global"][templateData["championId"]]["amount_lvl3"];
+                                var val2 = data_regions[id]["global"][templateData["championId"]]["amount_points"];
+                                var val3 = 0;
+                                for (var i = 0; i < regional.length; i++) { if(regional[i]["id"] == templateData["championId"]) val3 = (i + 1); }
+
+                                templateData["regions"].push({
+                                    name: id.toUpperCase(),
+                                    val: val,
+                                    val2: val2,
+                                    val3: val3
+                                });
+                            }
+                        }
+                        templateData["regions"].sort(function (a, b) {
+                            if (a["val"] > b["val"])
+                                return -1;
+                            if (a["val"] < b["val"])
+                                return 1;
+                            return 0;
+                        });
+                        for (var i = 0; i < templateData["regions"].length; i++) { templateData["regions"][i]["index"] = (i + 1); }
+                    }
+                }
+
+                if (templateData["championId"] && templateData["championId"].length > 0) {
+                    templateData["champion"] = data_champions[templateData["championId"]];
+                }
+
+                if (templateName.length > 0) {
+                    $("#" + name).find(".content").html(compiledTemplates[templateName](templateData));
+                }
+
+                $("#divMain").children().addClass("hidden");
+                $("#" + name).removeClass("hidden");
+                $("#divMain").scrollTop(0);
+            }
+        </script>
+    </body>
+</html>

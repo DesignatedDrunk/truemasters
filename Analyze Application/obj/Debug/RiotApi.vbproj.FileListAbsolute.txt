@@ -1,0 +1,11 @@
+D:\Installed x64\inetpub\wwwroot\RiotApi\RiotApi\bin\Debug\RiotApi.exe.config
+D:\Installed x64\inetpub\wwwroot\RiotApi\RiotApi\bin\Debug\RiotApi.exe
+D:\Installed x64\inetpub\wwwroot\RiotApi\RiotApi\bin\Debug\RiotApi.pdb
+D:\Installed x64\inetpub\wwwroot\RiotApi\RiotApi\bin\Debug\RiotApi.xml
+D:\Installed x64\inetpub\wwwroot\RiotApi\RiotApi\obj\Debug\RiotApi.Form1.resources
+D:\Installed x64\inetpub\wwwroot\RiotApi\RiotApi\obj\Debug\RiotApi.Resources.resources
+D:\Installed x64\inetpub\wwwroot\RiotApi\RiotApi\obj\Debug\RiotApi.vbproj.GenerateResource.Cache
+D:\Installed x64\inetpub\wwwroot\RiotApi\RiotApi\obj\Debug\RiotApi.exe
+D:\Installed x64\inetpub\wwwroot\RiotApi\RiotApi\obj\Debug\RiotApi.xml
+D:\Installed x64\inetpub\wwwroot\RiotApi\RiotApi\obj\Debug\RiotApi.pdb
+D:\Installed x64\inetpub\wwwroot\RiotApi\RiotApi\obj\Debug\RiotApi.vbprojResolveAssemblyReference.cache
